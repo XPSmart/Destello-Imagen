@@ -1,0 +1,107 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: none;
+	box-sizing: border-box;
+}
+body {
+	font-family: sans-serif;
+	font-size: 16px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	background-color: #F8F8F8;
+}
+
+.titulo {
+	flex-basis: 100%;
+	text-align: center;
+	color: teal;
+	margin: .5em 0;
+}
+
+.tarjeta {
+	margin: 20px;
+	width: 160px;
+	padding: 25px 10px 20px;
+	text-align: center;
+	border-radius: 7px;
+	transition: all .4s;
+	position: relative;
+	overflow: hidden;
+}
+.tarjeta:hover {
+	box-shadow: 0 3px 8px 0px #E9E9E9;
+	background-color: white;
+}
+.tarjeta:hover .tarjeta__numero {
+	background-color: #E9E9E9;
+	color: #707070;
+}
+.tarjeta__numero {
+	text-align: left;
+	border-radius: 0px 20% 100% 20%;
+	padding: 20px;
+	color: #A5A5A5;
+	font-size: 12px;
+	transition: all .4s;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.tarjeta__titulo {
+	margin: 10px 0;
+	font-weight: 400;
+	color: #4F4F4F;
+}
+.tarjeta__descripcion {
+	font-size: 12px;
+	color: gray;
+	line-height: 1.5;
+}
+.tarjeta__icon-container {
+	position: relative;
+	height: 60px;
+}
+.tarjeta__icon-container:before,
+.tarjeta__icon-container:after {
+	font-family: "fontello";
+	font-size: 60px;
+	left: 50%;
+	transform: translateX(-50%);
+	position: absolute;
+	color: orange;
+} 
+.rapidez:after,
+.rapidez:before {
+	content: '\e800';
+}
+.acceso:after,
+.acceso:before {
+	content: '\f017';
+}
+
+.tarjeta__link {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 10;
+}
+
+.tarjeta:hover .tarjeta__icon-container:after {
+	animation-name: destello;
+	animation-duration: .3s;
+}
+@keyframes destello {
+	0% {
+		opacity: 1;
+		transform: translateX(-50%) scale(1);
+	}
+	100% {
+		opacity: 0;
+		transform: translateX(-50%) scale(1.5);
+	}
+}
